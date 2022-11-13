@@ -1,0 +1,33 @@
+<mat-grid-list cols="1" *ngIf="!movie; else divMovie">
+  <mat-grid-tile>
+    <mat-spinner></mat-spinner>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divMovie>
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="30px">
+    <div fxFlex="20">
+        <h1>{{movie.Title}} <small>- {{movie.Year}}</small></h1>
+        <mat-divider></mat-divider>
+        <br>
+        <img src="{{movie.Poster}}">
+    </div>
+    <div fxFlex="50">
+        <h1>Information</h1>
+        <mat-divider></mat-divider>
+        <br>
+        <mat-list>
+            <mat-list-item>Director: {{movie.Director}}</mat-list-item>
+            <mat-list-item>Writer: {{movie.Writer}}</mat-list-item>
+            <mat-list-item>Actors: {{movie.Actors}}</mat-list-item>
+            <mat-list-item>Genre: {{movie.Genre}}</mat-list-item>
+            <mat-list-item>Rated: {{movie.Rated}}</mat-list-item>
+            <mat-list-item>Runtime: {{movie.Runtime}}</mat-list-item>
+            <mat-list-item>Description: {{movie.Plot}} </mat-list-item>
+            <mat-list-item></mat-list-item>
+        </mat-list>
+        <br>
+        <button mat-button color=warn (click)="regresar()">Volver</button>
+    </div>
+  </div>
+</ng-template>
