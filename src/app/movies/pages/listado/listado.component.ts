@@ -6,8 +6,8 @@ import { MoviesService } from '../../services/movies.service';
   selector: 'app-listado',
   templateUrl: './listado.component.html',
   styles:[`
-  mat-card{
-    margin-top:20px
+  .div-card{
+    margin: 20px;
   }
   `]
 })

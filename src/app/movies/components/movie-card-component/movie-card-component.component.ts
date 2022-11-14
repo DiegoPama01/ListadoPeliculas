@@ -9,6 +9,11 @@ import { MovieDisplay } from '../../interfaces/searchPetition.interface';
       mat-card {
         margin-top: 20px;
       }
+
+      img{
+        height: 480px;
+        width: 100;
+      }
     `,
   ],
 })
