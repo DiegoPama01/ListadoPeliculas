@@ -1,10 +1,9 @@
 <div fxLayout="column">
   <div>
-    <h1>Movie finder</h1>
+    <h1 fxLayoutAlign="center">Buscador de películas</h1>
     <mat-divider></mat-divider>
   </div>
   <div fxLayout="column">
-    <h3>Searcher</h3>
     <mat-form-field>
       <input
         type="text"
@@ -23,8 +22,18 @@
         <mat-option *ngFor="let movie of movies" [value]="movie">
           {{ movie.Title }}
         </mat-option>
-        <mat-option [value]="" *ngIf="petitionState"> {{error}}</mat-option>
+        <mat-option [value]="" *ngIf="petitionState"> {{ error }}</mat-option>
       </mat-autocomplete>
     </mat-form-field>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="center" fxLayout.xs="column">
+    <div
+      class="div-card"
+      fxFlex="30"
+      fxFlex.lg="16"
+      *ngFor="let movieItem of movies"
+    >
+      <app-movie-card-component [movie]="movieItem"></app-movie-card-component>
+    </div>
   </div>
 </div>

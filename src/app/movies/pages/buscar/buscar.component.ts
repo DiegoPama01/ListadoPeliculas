@@ -34,10 +34,9 @@ export class BuscarComponent implements OnInit {
 
   opcionSeleccionada(event: MatAutocompleteSelectedEvent) {
     const movie: MovieDisplay = event.option.value;
-    this.termino = movie.Title;
-
-    this.moviesService
-      .getMoviesByID(movie.imdbID)
-      .subscribe((movie) => (this.selectedMovie = movie));
+    if (this.petitionState == 'True') {
+      this.termino = movie.Title;
+      this.buscando(this.termino);
+    }
   }
 }

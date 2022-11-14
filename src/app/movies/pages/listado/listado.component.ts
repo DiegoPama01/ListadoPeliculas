@@ -5,11 +5,6 @@ import { MoviesService } from '../../services/movies.service';
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
-  styles:[`
-  .div-card{
-    margin: 20px;
-  }
-  `]
 })
 export class ListadoComponent implements OnInit {
 

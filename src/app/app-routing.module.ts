@@ -4,8 +4,8 @@ import { ErrorPageComponent } from './shared/error-page/error-page.component';
 
 const routes: Routes = [
   {
-    path:'movies',
-    loadChildren:() => import('./movies/movies.module').then(m=>m.MoviesModule)
+    path:'cartelera',
+    loadChildren:() => import('./movies/movies.module').then(m=>m.MoviesModule),
   },
   {
     path: '404',
@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '404'
+    redirectTo: 'cartelera/listado'
   }
 ];
 
