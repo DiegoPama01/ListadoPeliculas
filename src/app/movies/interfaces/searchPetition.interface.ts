@@ -14,5 +14,7 @@ export interface MovieDisplay {
 }
 
 export enum Type {
-    Movie = "Movie",
+    Movie = "movie",
+    Series = "series",
+    Episode = "episode"
 }
