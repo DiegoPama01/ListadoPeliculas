@@ -18,6 +18,7 @@ export class MoviesService {
   ];
 
   private baseUrl: string = environment.baseUrl;
+  private apikey: string = environment.apikey;
 
   constructor(private http: HttpClient) {}
 
@@ -26,19 +27,19 @@ export class MoviesService {
       Math.random() * this.busquedaEjemplo.length
     );
     return this.http.get<SearchPetition>(
-      `${this.baseUrl}?s=${this.busquedaEjemplo[number]}&type=movie&apikey=4c5e476e`
+      `${this.baseUrl}?s=${this.busquedaEjemplo[number]}&type=movie&apikey=${this.apikey}`
     );
   }
 
   getMoviesByID(id: String) {
     return this.http.get<Movie>(
-      `${this.baseUrl}?i=${id}&type=movie&apikey=4c5e476e`
+      `${this.baseUrl}?i=${id}&type=movie&apikey=${this.apikey}`
     );
   }
 
   getMoviesByName(name: String) {
     return this.http.get<SearchPetition>(
-      `${this.baseUrl}?s=${name}&type=movie&apikey=4c5e476e`
+      `${this.baseUrl}?s=${name}&type=movie&apikey=${this.apikey}`
     );
   }
 }
