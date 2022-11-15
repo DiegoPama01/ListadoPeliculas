@@ -9,12 +9,18 @@ import { environment } from 'src/environments/environment';
 })
 export class MoviesService {
 
+
+  private busquedaEjemplo: string[] = ["Matrix", "Iron Man", "Toy Story", "Superman", "Spiderman"] 
+
   private baseUrl: string = environment.baseUrl;
+
+
 
   constructor(private http: HttpClient) {}
 
   getMovies() { 
-    return this.http.get<SearchPetition>(`${this.baseUrl}?s=Matrix&type=movie&apikey=4c5e476e`);
+    let number: number = Math.floor(Math.random()*this.busquedaEjemplo.length)
+    return this.http.get<SearchPetition>(`${this.baseUrl}?s=${this.busquedaEjemplo[number]}&type=movie&apikey=4c5e476e`);
   }
 
   getMoviesByID(id:String) { 

@@ -1,6 +1,6 @@
 <mat-card fxFlexAlign="stretch">
   <mat-card-header>
-    <mat-card-title>{{ movie.Title }}</mat-card-title>
+    <mat-card-title class="text-oneline">{{ movie.Title }}</mat-card-title>
     <mat-card-subtitle>{{ movie.Year }}</mat-card-subtitle>
   </mat-card-header>
   <img mat-card-image [src]="movie.Poster !='N/A' ? movie.Poster: 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'">

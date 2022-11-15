@@ -10,7 +10,15 @@ import { MovieDisplay } from '../../interfaces/searchPetition.interface';
         margin-top: 20px;
       }
 
-      img{
+      .text-oneline {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      mat-card-header {
+        display: flow-root;
+      }
+      img {
         height: 480px;
         width: 100;
       }
